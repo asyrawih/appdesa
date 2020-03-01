@@ -14,4 +14,4 @@ git clone repo_url
     * [⌛] Direct langsung Lokasi Bangun jaya
 
 * [☀] Splash Screen 🍁
-    * [☀] Direct langsung Lokasi Bangun jaya
+    * [☀] tunggu 5 detik Masuk ke home Page
