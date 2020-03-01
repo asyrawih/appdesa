@@ -14,3 +14,11 @@ const subtitleStyle = TextStyle(
   fontWeight: FontWeight.w300,
   color: lightColor,
 );
+
+const containerBox = Color(0xff283f4d);
+
+BoxShadow boxShadow = BoxShadow(
+  offset: Offset(0.00, 3.00),
+  color: Color(0xff000000).withOpacity(0.16),
+  blurRadius: 50,
+);

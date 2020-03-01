@@ -1,3 +1,4 @@
+import 'package:appdesa/screen/Informasi.dart';
 import 'package:appdesa/widgets/AlertDialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +63,10 @@ class _HomePageState extends State<HomePage> {
                   InkWell(
                     splashColor: Colors.transparent,
                     onTap: () {
-                      showAlertDialog(context);
+                      // showAlertDialog(context);
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Informasi()),
+                      );
                     },
                     child: _buildSoftUIMenu(LineAwesomeIcons.info,
                         Colors.deepOrangeAccent, 'Informasi'),
