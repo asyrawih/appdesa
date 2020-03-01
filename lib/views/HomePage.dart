@@ -1,3 +1,4 @@
+import 'package:appdesa/screen/Berita.dart';
 import 'package:appdesa/screen/Informasi.dart';
 import 'package:appdesa/widgets/AlertDialog.dart';
 import 'package:flutter/cupertino.dart';
@@ -92,7 +93,9 @@ class _HomePageState extends State<HomePage> {
                     child: _buildSoftUIMenu(LineAwesomeIcons.newspaper_o,
                         Colors.lightBlueAccent, 'Berita'),
                     onTap: () {
-                      showAlertDialog(context);
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Berita()),
+                      );
                     },
                   ),
                   InkWell(
