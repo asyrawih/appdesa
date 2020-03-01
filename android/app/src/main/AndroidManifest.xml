@@ -8,7 +8,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="Bangun Jaya"
-        android:icon="@mipmap/logo2.png">
+        android:icon="@mipmap/logo2">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
