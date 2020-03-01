@@ -1,4 +1,4 @@
-import 'package:appdesa/views/HomePage.dart';
+import 'package:appdesa/views/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         splashColor: Colors.transparent,
         dialogBackgroundColor: Color(0xff102733),
       ),
-      home: HomePage(),
+      home: SpScreen(),
     );
   }
 }

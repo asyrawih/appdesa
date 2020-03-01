@@ -57,7 +57,7 @@ class Informasi extends StatelessWidget {
                         ),
                         SizedBox(height: 20.0),
                         Text(
-                          'Versi App 1.0',
+                          'Versi App 1.0 \t Create by Hanan',
                           style: GoogleFonts.aBeeZee(color: Colors.white),
                         ),
                       ],
