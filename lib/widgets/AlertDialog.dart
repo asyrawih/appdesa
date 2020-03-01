@@ -19,11 +19,11 @@ showAlertDialog(BuildContext context) {
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
     title: Text(
-      "Alerta ",
+      'Help',
       style: GoogleFonts.muli(color: Colors.white),
     ),
     content: Text(
-      "Tradaaa",
+      'Tekan Salah Satu Menu ',
       style: GoogleFonts.muli(color: Colors.white),
     ),
     actions: [

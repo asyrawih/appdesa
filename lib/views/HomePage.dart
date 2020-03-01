@@ -1,5 +1,9 @@
 import 'package:appdesa/screen/Berita.dart';
+import 'package:appdesa/screen/BumDes.dart';
+import 'package:appdesa/screen/DanaDesa.dart';
 import 'package:appdesa/screen/Informasi.dart';
+import 'package:appdesa/screen/Pengaduan.dart';
+import 'package:appdesa/screen/Statik.dart';
 import 'package:appdesa/widgets/AlertDialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +60,9 @@ class _HomePageState extends State<HomePage> {
                   InkWell(
                     splashColor: Colors.transparent,
                     onTap: () {
-                      showAlertDialog(context);
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => DanaDesa()),
+                      );
                     },
                     child: _buildSoftUIMenu(
                         LineAwesomeIcons.money, Colors.cyanAccent, 'Dana Desa'),
@@ -64,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                   InkWell(
                     splashColor: Colors.transparent,
                     onTap: () {
-                      // showAlertDialog(context);
+                      // showAlertDialog(context);;
                       Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => Informasi()),
                       );
@@ -101,7 +107,9 @@ class _HomePageState extends State<HomePage> {
                   InkWell(
                     splashColor: Colors.transparent,
                     onTap: () {
-                      showAlertDialog(context);
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => BumDes()),
+                      );
                     },
                     child: _buildSoftUIMenu(LineAwesomeIcons.shopping_cart,
                         Colors.deepOrangeAccent, 'BUMdes'),
@@ -109,7 +117,9 @@ class _HomePageState extends State<HomePage> {
                   InkWell(
                     splashColor: Colors.transparent,
                     onTap: () {
-                      showAlertDialog(context);
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Pengaduan()),
+                      );
                     },
                     child: _buildSoftUIMenu(LineAwesomeIcons.chain,
                         Colors.yellowAccent, 'Pengaduan'),
@@ -141,7 +151,9 @@ class _HomePageState extends State<HomePage> {
                   InkWell(
                     splashColor: Colors.transparent,
                     onTap: () {
-                      showAlertDialog(context);
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Statik()),
+                      );
                     },
                     child: _buildSoftUIMenu(LineAwesomeIcons.bar_chart,
                         Colors.yellowAccent, 'Statistik'),
