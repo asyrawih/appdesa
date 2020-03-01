@@ -9,7 +9,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Desa Digital',
-      theme: ThemeData(primaryColor: Color(0xff102733)),
+      theme: ThemeData(
+        primaryColor: Color(0xff102733),
+        splashColor: Colors.transparent,
+        dialogBackgroundColor: Color(0xff102733),
+      ),
       home: HomePage(),
     );
   }

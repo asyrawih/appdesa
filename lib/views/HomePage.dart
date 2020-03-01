@@ -24,21 +24,12 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(
-                'Desa Digital',
-                style: titleStyle,
-              ),
-
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                'Selamat Datang Di Applikasi Digital Desa Bangun Jaya',
-                style: subtitleStyle,
-              ),
-              SizedBox(
-                height: 20,
-              ),
+              Text('Desa Digital', style: titleStyle),
+              SizedBox(height: 20),
+              Text('Selamat Datang Di Applikasi Digital Desa Bangun Jaya',
+                  style: subtitleStyle),
+              SizedBox(height: 20),
+              // !Logo
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -54,23 +45,38 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 50.0,
-              ),
-              //IMplement GRID to hold our menus,bot for simplicity,i will use ROWS
+              SizedBox(height: 50.0),
+              // ! Row 1
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  _buildSoftUIMenu(
-                      LineAwesomeIcons.money, Colors.cyanAccent, 'Dana Desa'),
-                  _buildSoftUIMenu(LineAwesomeIcons.info,
-                      Colors.deepOrangeAccent, 'Informasi'),
-                  _buildSoftUIMenu(LineAwesomeIcons.map,
-                      Colors.lightGreenAccent, 'Peta Desa'),
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    onTap: () {
+                      showAlertDialog(context);
+                    },
+                    child: _buildSoftUIMenu(
+                        LineAwesomeIcons.money, Colors.cyanAccent, 'Dana Desa'),
+                  ),
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    onTap: () {
+                      showAlertDialog(context);
+                    },
+                    child: _buildSoftUIMenu(LineAwesomeIcons.info,
+                        Colors.deepOrangeAccent, 'Informasi'),
+                  ),
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    onTap: () {
+                      showAlertDialog(context);
+                    },
+                    child: _buildSoftUIMenu(LineAwesomeIcons.map,
+                        Colors.lightGreenAccent, 'Peta Desa'),
+                  ),
                 ],
               ),
-
               SizedBox(height: 30.0),
 
               Row(
@@ -78,16 +84,61 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   InkWell(
+                    splashColor: Colors.transparent,
                     child: _buildSoftUIMenu(LineAwesomeIcons.newspaper_o,
                         Colors.lightBlueAccent, 'Berita'),
                     onTap: () {
                       showAlertDialog(context);
                     },
                   ),
-                  _buildSoftUIMenu(LineAwesomeIcons.shopping_cart,
-                      Colors.deepOrangeAccent, 'BUMdes'),
-                  _buildSoftUIMenu(
-                      LineAwesomeIcons.chain, Colors.yellowAccent, 'Pengaduan'),
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    onTap: () {
+                      showAlertDialog(context);
+                    },
+                    child: _buildSoftUIMenu(LineAwesomeIcons.shopping_cart,
+                        Colors.deepOrangeAccent, 'BUMdes'),
+                  ),
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    onTap: () {
+                      showAlertDialog(context);
+                    },
+                    child: _buildSoftUIMenu(LineAwesomeIcons.chain,
+                        Colors.yellowAccent, 'Pengaduan'),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20.0),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    child: _buildSoftUIMenu(LineAwesomeIcons.vimeo_square,
+                        Colors.lightBlueAccent, 'Visi & Misi'),
+                    onTap: () {
+                      showAlertDialog(context);
+                    },
+                  ),
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    onTap: () {
+                      showAlertDialog(context);
+                    },
+                    child: _buildSoftUIMenu(LineAwesomeIcons.list_ol,
+                        Colors.deepOrangeAccent, 'Kelembagaan'),
+                  ),
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    onTap: () {
+                      showAlertDialog(context);
+                    },
+                    child: _buildSoftUIMenu(LineAwesomeIcons.bar_chart,
+                        Colors.yellowAccent, 'Statistik'),
+                  ),
                 ],
               ),
               SizedBox(height: 20.0),
