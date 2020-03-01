@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xff102733),
         splashColor: Colors.transparent,
         dialogBackgroundColor: Color(0xff102733),
+        highlightColor: Colors.transparent
       ),
       home: SpScreen(),
     );

@@ -8,7 +8,7 @@ class SpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SplashScreen(
-      seconds: 10,
+      seconds: 3,
       navigateAfterSeconds: HomePage(),
       backgroundColor: bgColor,
       title:
