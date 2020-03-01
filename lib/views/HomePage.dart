@@ -1,3 +1,5 @@
+import 'package:appdesa/widgets/AlertDialog.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 
@@ -75,8 +77,13 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  _buildSoftUIMenu(LineAwesomeIcons.newspaper_o,
-                      Colors.lightBlueAccent, 'Berita'),
+                  InkWell(
+                    child: _buildSoftUIMenu(LineAwesomeIcons.newspaper_o,
+                        Colors.lightBlueAccent, 'Berita'),
+                    onTap: () {
+                      showAlertDialog(context);
+                    },
+                  ),
                   _buildSoftUIMenu(LineAwesomeIcons.shopping_cart,
                       Colors.deepOrangeAccent, 'BUMdes'),
                   _buildSoftUIMenu(
