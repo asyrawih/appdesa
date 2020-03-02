@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:appdesa/style.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -13,25 +14,37 @@ class PetaDesa extends StatefulWidget {
 class _PetaDesaState extends State<PetaDesa> {
   Completer<GoogleMapController> _controller = Completer();
 
-  @override
-  void initState() {
-    super.initState();
+  final Geolocator _geolocator = Geolocator()..forceAndroidLocationManager;
+  static Position _currentPosition;
+
+  _getCurrentLocation() {
+    _geolocator
+        .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
+        .then((Position position) {
+      setState(() {
+        _currentPosition = position;
+      });
+      print(_currentPosition);
+    }).catchError((e) {
+      print(e);
+    });
   }
 
   static final CameraPosition _bangunJayaLocation =
       CameraPosition(target: LatLng(-2.5055052, 120.8237896), zoom: 8);
 
-  static final CameraPosition _zoomBangunJaya = CameraPosition(
-    target: LatLng(-2.5079869, 120.8209727),
-    bearing: 90,
-    tilt: 40,
-  );
+  // static final CameraPosition _posisiSekrang = CameraPosition(
+  //   target: LatLng(_currentPosition.latitude, _currentPosition.longitude),
+  // );
 
-  Future<void> _goToTheLake() async {
-    final GoogleMapController controller = await _controller.future;
-    controller.animateCamera(
-      CameraUpdate.newCameraPosition(_zoomBangunJaya),
-    );
+  // Future<void> _updateCameraMap() async {
+  //   final GoogleMapController controller = await _controller.future;
+  //   controller.animateCamera(CameraUpdate.newCameraPosition(_posisiSekrang));
+  // }
+
+  @override
+  void initState() {
+    super.initState();
   }
 
   @override
@@ -66,7 +79,9 @@ class _PetaDesaState extends State<PetaDesa> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          _goToTheLake();
+          // _updateCameraMap();
+          _getCurrentLocation();
+          print(_currentPosition);
         },
         child: Icon(Icons.my_location),
         tooltip: 'Posisi Sekarang',
