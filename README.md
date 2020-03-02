@@ -2,6 +2,10 @@
 ````
 git clone repo_url
 ````
+
+# Preview Gambar Applikasi
+![Image description](screen.jpeg)
+
 # Todo App Desa
 
  * [x] Bikin Screen Informasi 💁
@@ -23,6 +27,8 @@ git clone repo_url
 
 * [x] Screen Kelembagaan 🍁
     * [x] Add Staf 
+
+
 
 
 
