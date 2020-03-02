@@ -1,8 +1,28 @@
 import 'package:appdesa/style.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:appdesa/model/ModelChart.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:appdesa/widgets/ChartStatistik.dart';
 
 class Statik extends StatelessWidget {
+  final List<ModelChart> data = [
+    ModelChart(
+      label: "Anak Anak",
+      counter: 800,
+      barColor: charts.ColorUtil.fromDartColor(Colors.red),
+    ),
+    ModelChart(
+      label: "Dewasa",
+      counter: 2000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.redAccent),
+    ),
+    ModelChart(
+      label: "Lansia",
+      counter: 12000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.greenAccent),
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,8 +43,13 @@ class Statik extends StatelessWidget {
         ),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[],
+        children: <Widget>[
+          SingleChildScrollView(
+            child: ChartStatistik(
+              data: data,
+            ),
+          ),
+        ],
       ),
     );
   }
