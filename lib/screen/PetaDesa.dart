@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:appdesa/style.dart';
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:location/location.dart';
 
 class PetaDesa extends StatefulWidget {
   @override
@@ -14,37 +14,45 @@ class PetaDesa extends StatefulWidget {
 class _PetaDesaState extends State<PetaDesa> {
   Completer<GoogleMapController> _controller = Completer();
 
-  final Geolocator _geolocator = Geolocator()..forceAndroidLocationManager;
-  static Position _currentPosition;
+  Location location = new Location();
+  bool _serviceEnabled;
+  PermissionStatus _permissionGranted;
+  static LocationData _locationData;
 
-  _getCurrentLocation() {
-    _geolocator
-        .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
-        .then((Position position) {
-      setState(() {
-        _currentPosition = position;
-      });
-      print(_currentPosition);
-    }).catchError((e) {
-      print(e);
-    });
+  Future<void> lokasiku() async {
+    _locationData = await location.getLocation();
+
+    _serviceEnabled = await location.serviceEnabled();
+    if (!_serviceEnabled) {
+      _serviceEnabled = await location.requestService();
+      if (_serviceEnabled) {
+        return;
+      }
+    }
+    _permissionGranted = await location.hasPermission();
+    if (_permissionGranted == PermissionStatus.DENIED) {
+      _permissionGranted = await location.requestPermission();
+      if (_permissionGranted != PermissionStatus.GRANTED) {
+        return _locationData;
+      }
+    }
+    print(_locationData);
   }
 
-  static final CameraPosition _bangunJayaLocation =
-      CameraPosition(target: LatLng(-2.5055052, 120.8237896), zoom: 8);
+  // Initial Camera
+  static final CameraPosition _bangunJayaLocation = CameraPosition(
+    target: LatLng(-2.5088628, 120.8218714),
+    zoom: 14,
+  );
 
-  // static final CameraPosition _posisiSekrang = CameraPosition(
-  //   target: LatLng(_currentPosition.latitude, _currentPosition.longitude),
-  // );
+  static final CameraPosition _updateMaps = CameraPosition(
+    target: LatLng(_locationData.latitude , _locationData.longitude),
+    zoom: 19.151926040649414,
+  );
 
-  // Future<void> _updateCameraMap() async {
-  //   final GoogleMapController controller = await _controller.future;
-  //   controller.animateCamera(CameraUpdate.newCameraPosition(_posisiSekrang));
-  // }
-
-  @override
-  void initState() {
-    super.initState();
+  Future<void> updateMapsku() async {
+    final GoogleMapController controller = await _controller.future;
+    controller.animateCamera(CameraUpdate.newCameraPosition(_updateMaps));
   }
 
   @override
@@ -78,10 +86,9 @@ class _PetaDesaState extends State<PetaDesa> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // _updateCameraMap();
-          _getCurrentLocation();
-          print(_currentPosition);
+        onPressed: () async {
+          await lokasiku();
+          await updateMapsku();
         },
         child: Icon(Icons.my_location),
         tooltip: 'Posisi Sekarang',
