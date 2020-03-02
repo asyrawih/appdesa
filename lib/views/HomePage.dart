@@ -2,9 +2,11 @@ import 'package:appdesa/screen/Berita.dart';
 import 'package:appdesa/screen/BumDes.dart';
 import 'package:appdesa/screen/DanaDesa.dart';
 import 'package:appdesa/screen/Informasi.dart';
+import 'package:appdesa/screen/Kelembagaan.dart';
 import 'package:appdesa/screen/Pengaduan.dart';
+import 'package:appdesa/screen/PetaDesa.dart';
 import 'package:appdesa/screen/Statik.dart';
-import 'package:appdesa/widgets/AlertDialog.dart';
+import 'package:appdesa/screen/Visi.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
@@ -81,7 +83,9 @@ class _HomePageState extends State<HomePage> {
                   InkWell(
                     splashColor: Colors.transparent,
                     onTap: () {
-                      showAlertDialog(context);
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => PetaDesa(),
+                      ));
                     },
                     child: _buildSoftUIMenu(LineAwesomeIcons.map,
                         Colors.lightGreenAccent, 'Peta Desa'),
@@ -89,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               SizedBox(height: 30.0),
-
+              // ! Row 2 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -127,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               SizedBox(height: 20.0),
-
+              // ! Row 3 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -137,13 +141,17 @@ class _HomePageState extends State<HomePage> {
                     child: _buildSoftUIMenu(LineAwesomeIcons.vimeo_square,
                         Colors.lightBlueAccent, 'Visi & Misi'),
                     onTap: () {
-                      showAlertDialog(context);
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Visi()),
+                      );
                     },
                   ),
                   InkWell(
                     splashColor: Colors.transparent,
                     onTap: () {
-                      showAlertDialog(context);
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Kelambagaan()),
+                      );
                     },
                     child: _buildSoftUIMenu(LineAwesomeIcons.list_ol,
                         Colors.deepOrangeAccent, 'Kelembagaan'),

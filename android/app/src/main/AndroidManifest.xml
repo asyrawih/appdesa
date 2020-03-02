@@ -9,6 +9,9 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="Bangun Jaya"
         android:icon="@mipmap/logo2">
+        <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyB7-5fLt7aDAI1HzQl0ICB04PeG0cVS3fI" />
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
