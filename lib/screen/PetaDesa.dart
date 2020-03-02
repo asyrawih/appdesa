@@ -19,6 +19,8 @@ class _PetaDesaState extends State<PetaDesa> {
   PermissionStatus _permissionGranted;
   static LocationData _locationData;
 
+  MapType _mapType = MapType.normal;
+
   Future<void> lokasiku() async {
     _locationData = await location.getLocation();
 
@@ -46,13 +48,22 @@ class _PetaDesaState extends State<PetaDesa> {
   );
 
   static final CameraPosition _updateMaps = CameraPosition(
-    target: LatLng(_locationData.latitude , _locationData.longitude),
+    target: LatLng(_locationData.latitude, _locationData.longitude),
     zoom: 19.151926040649414,
   );
 
   Future<void> updateMapsku() async {
     final GoogleMapController controller = await _controller.future;
-    controller.animateCamera(CameraUpdate.newCameraPosition(_updateMaps));
+    controller.animateCamera(
+      CameraUpdate.newCameraPosition(_updateMaps),
+    );
+  }
+
+  void _onMapTypeButtonPressed() {
+    setState(() {
+      _mapType =
+          _mapType == MapType.normal ? MapType.satellite : MapType.normal;
+    });
   }
 
   @override
@@ -77,21 +88,57 @@ class _PetaDesaState extends State<PetaDesa> {
       body: Stack(
         children: <Widget>[
           GoogleMap(
-            mapType: MapType.terrain,
+            mapType: _mapType,
             initialCameraPosition: _bangunJayaLocation,
             onMapCreated: (GoogleMapController controller) {
               _controller.complete(controller);
             },
           ),
+          Column(
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child: FloatingActionButton(
+                    onPressed: () async {
+                      await lokasiku();
+                      await updateMapsku();
+                    },
+                    materialTapTargetSize: MaterialTapTargetSize.padded,
+                    backgroundColor: bgColor,
+                    child: Icon(
+                      Icons.my_location,
+                      color: Colors.white,
+                      size: 36.0,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child: FloatingActionButton(
+                    onPressed: () {
+                      _onMapTypeButtonPressed();
+                    },
+                    materialTapTargetSize: MaterialTapTargetSize.padded,
+                    backgroundColor: bgColor,
+                    child: Icon(
+                      Icons.map,
+                      color: Colors.white,
+                      size: 36.0,
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          await lokasiku();
-          await updateMapsku();
-        },
-        child: Icon(Icons.my_location),
-        tooltip: 'Posisi Sekarang',
       ),
     );
   }
