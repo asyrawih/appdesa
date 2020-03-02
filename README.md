@@ -8,10 +8,21 @@ git clone repo_url
     * [☀] Buat Screen Informasi Desa
 
  * [⌛] Bikin Screen Bumdes 💁
-    * [⌛] Buat list Table Bumdes Yang Sedang Berjalan Di Desa
+    * [x] Buat list Table Bumdes Yang Sedang Berjalan Di Desa
+
+ * [⌛] Bikin Screen Statistik 💁
+    * [x] Add Bar Chart 🍁
+        * [x] bar Chart Dengan Dummy Data
 
 * [⌛] Peta Desa 🍁
-    * [⌛] Direct langsung Lokasi Bangun jaya
+    * [x] Direct langsung Lokasi Bangun jayas
+        * [x] ambil lokasi Sekarang ;
 
 * [☀] Splash Screen 🍁
     * [☀] tunggu 5 detik Masuk ke home Page
+
+* [☀] Screen Kelembagaan 🍁
+    * [☀] Add Staf 
+
+
+
