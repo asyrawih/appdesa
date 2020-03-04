@@ -1,7 +1,7 @@
 import 'package:appdesa/screen/Berita.dart';
 import 'package:appdesa/screen/BumDes.dart';
 import 'package:appdesa/screen/DanaDesa.dart';
-import 'package:appdesa/screen/Informasi.dart';
+import 'package:appdesa/screen/Pelayanan.dart';
 import 'package:appdesa/screen/Kelembagaan.dart';
 import 'package:appdesa/screen/Pengaduan.dart';
 import 'package:appdesa/screen/PetaDesa.dart';
@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                     onTap: () {
                       // showAlertDialog(context);;
                       Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => Informasi()),
+                        MaterialPageRoute(builder: (context) => Pelayanan()),
                       );
                     },
                     child: _buildSoftUIMenu(LineAwesomeIcons.info,

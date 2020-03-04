@@ -24,7 +24,9 @@ class Pengaduan extends StatelessWidget {
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[],
+        children: <Widget>[
+          
+        ],
       ),
     );
   }
