@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                       );
                     },
                     child: _buildSoftUIMenu(LineAwesomeIcons.info,
-                        Colors.deepOrangeAccent, 'Informasi'),
+                        Colors.deepOrangeAccent, 'Pelayanan'),
                   ),
                   InkWell(
                     splashColor: Colors.transparent,
@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               SizedBox(height: 30.0),
-              // ! Row 2 
+              // ! Row 2
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -131,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               SizedBox(height: 20.0),
-              // ! Row 3 
+              // ! Row 3
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,

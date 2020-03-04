@@ -43,7 +43,7 @@ class _PetaDesaState extends State<PetaDesa> {
 
   // Initial Camera
   static final CameraPosition _bangunJayaLocation = CameraPosition(
-    target: LatLng(-2.5088628, 120.8218714),
+    target: LatLng(-2.5129697,120.8198325),
     zoom: 14,
   );
 

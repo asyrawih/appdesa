@@ -61,7 +61,7 @@ class Kelambagaan extends StatelessWidget {
                     'https://images.pexels.com/photos/3722173/pexels-photo-3722173.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
               ),
               SizedBox(height: 10.0),
-               _ListContainer(
+              _ListContainer(
                 nama: 'Fadly Irawan',
                 jabatan: 'CS Cleaning Service',
                 gambar:
@@ -80,9 +80,7 @@ class _ListContainer extends StatelessWidget {
   final String nama;
   final String alamat;
   final String jabatan;
-
   final String gambar;
-
   const _ListContainer(
       {Key key, this.nama, this.alamat, this.jabatan, this.gambar})
       : super(key: key);

@@ -14,7 +14,7 @@ class Informasi extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Text(
-              'Informasi',
+              'Pelayanan',
               style: GoogleFonts.roboto(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:appdesa/model/ModelChart.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
-import 'package:google_fonts/google_fonts.dart';
 
 class ChartStatistik extends StatelessWidget {
   final List<ModelChart> data;
@@ -18,18 +17,19 @@ class ChartStatistik extends StatelessWidget {
       ),
     ];
     return Container(
-      height: 400,
-      width: 400,
+      height: 500,
+      width: 500,
       padding: EdgeInsets.all(20),
       child: Card(
         child: Column(
           children: <Widget>[
-            Text(
-              'tes',
-              style: GoogleFonts.roboto(
-                color: Colors.white,
+            Expanded(
+              child: charts.BarChart(
+                chart,
+                animate: true,
               ),
             ),
+            SizedBox(height: 20.0),
             Expanded(
               child: charts.BarChart(
                 chart,
