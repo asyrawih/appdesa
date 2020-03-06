@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               Text('Desa Digital', style: titleStyle),
               SizedBox(height: 20),
-              Text('Selamat Datang Di Applikasi Digital Desa Bangun Jaya',
+              Text('Selamat Datang Di Aplikasi Digital Desa Bangun Jaya',
                   style: subtitleStyle),
               SizedBox(height: 20),
               // !Logo
