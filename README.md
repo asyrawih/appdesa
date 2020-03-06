@@ -31,16 +31,15 @@ git clone repo_url
 
 * [x] Screen Pelayanan 🍁
     * [x] show Pelayanan Desa
-    * [ ] add form  request
-    * [ ] field nama 
-    * [ ] field nik
-    * [ ] field alamat
-    * [ ] field noHp
-    * [ ] Send req Ke admin Desa
+    * [x] add form  request
+    * [x] field nama 
+    * [x] field nik
+    * [x] field alamat
+    * [x] field noHp
+    * [x] Send req Ke admin Desa
 
 * [x] Screen Berita
     * [x] Get Berita nya Youtube Desa
 
-* [ ] Buat Statistik Desa 
-    * [ ] Statistik Penduduk 
-    * [ ] Statistik Bumdes
+* [x] Buat Statistik Desa 
+    * [x] Statistik Penduduk 
