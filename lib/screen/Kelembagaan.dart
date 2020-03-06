@@ -36,7 +36,7 @@ class Kelambagaan extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
-                    'Aparat Desa',
+                    'BPD',
                     style:
                         GoogleFonts.roboto(color: Colors.white, fontSize: 24.0),
                   ),

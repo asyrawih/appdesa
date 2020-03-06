@@ -30,12 +30,6 @@ class ChartStatistik extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20.0),
-            Expanded(
-              child: charts.BarChart(
-                chart,
-                animate: true,
-              ),
-            )
           ],
         ),
       ),

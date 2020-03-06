@@ -28,60 +28,6 @@ class _BeritaState extends State<Berita> {
     });
   }
 
-  // _buildProfileInfo() {
-  //   return Container(
-  //     margin: EdgeInsets.all(20.0),
-  //     padding: EdgeInsets.all(20.0),
-  //     height: 100.0,
-  //     decoration: BoxDecoration(
-  //       color: bgColor,
-  //       boxShadow: [
-  //         BoxShadow(
-  //           color: Colors.black12,
-  //           offset: Offset(0, 1),
-  //           blurRadius: 6.0,
-  //         ),
-  //       ],
-  //     ),
-  //     child: Row(
-  //       children: <Widget>[
-  //         CircleAvatar(
-  //           backgroundColor: Colors.white,
-  //           radius: 35.0,
-  //           backgroundImage: NetworkImage(_channel.profilePictureUrl),
-  //         ),
-  //         SizedBox(width: 12.0),
-  //         Expanded(
-  //           child: Column(
-  //             mainAxisAlignment: MainAxisAlignment.center,
-  //             crossAxisAlignment: CrossAxisAlignment.start,
-  //             children: <Widget>[
-  //               Text(
-  //                 _channel.title,
-  //                 style: TextStyle(
-  //                   color: Colors.black,
-  //                   fontSize: 20.0,
-  //                   fontWeight: FontWeight.w600,
-  //                 ),
-  //                 overflow: TextOverflow.ellipsis,
-  //               ),
-  //               Text(
-  //                 '${_channel.subscriberCount} subscribers',
-  //                 style: TextStyle(
-  //                   color: Colors.grey[600],
-  //                   fontSize: 16.0,
-  //                   fontWeight: FontWeight.w600,
-  //                 ),
-  //                 overflow: TextOverflow.ellipsis,
-  //               ),
-  //             ],
-  //           ),
-  //         )
-  //       ],
-  //     ),
-  //   );
-  // }
-
   _buildVideo(Video video) {
     return GestureDetector(
       onTap: () => Navigator.push(
@@ -176,7 +122,7 @@ class _BeritaState extends State<Berita> {
           : Center(
               child: CircularProgressIndicator(
                 valueColor: AlwaysStoppedAnimation<Color>(
-                  Theme.of(context).primaryColor, // Red
+                  Theme.of(context).primaryColorLight, // Red
                 ),
               ),
             ),
