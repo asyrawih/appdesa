@@ -17,11 +17,11 @@ git clone repo_url
 
  * [x] Bikin Screen Statistik 💁
     * [x] Add Bar Chart 🍁
-        * [x] bar Chart Dengan Dummy Data
+    * [x] bar Chart Dengan Dummy Data
 
 * [x] Peta Desa 🍁
-    * [x] Direct langsung Lokasi Bangun jayas
-        * [x] ambil lokasi Sekarang ;
+    * [x] Direct langsung Lokasi Bangun jaya
+    * [x] ambil lokasi Sekarang ;
 
 * [x] Splash Screen 🍁
     * [x] tunggu 5 detik Masuk ke home Page
@@ -29,7 +29,18 @@ git clone repo_url
 * [x] Screen Kelembagaan 🍁
     * [x] Add Staf 
 
+* [x] Screen Pelayanan 🍁
+    * [x] show Pelayanan Desa
+    * [ ] add form  request
+    * [ ] field nama 
+    * [ ] field nik
+    * [ ] field alamat
+    * [ ] field noHp
+    * [ ] Send req Ke admin Desa
 
+* [x] Screen Berita
+    * [x] Get Berita nya Youtube Desa
 
-
-
+* [ ] Buat Statistik Desa 
+    * [ ] Statistik Penduduk 
+    * [ ] Statistik Bumdes

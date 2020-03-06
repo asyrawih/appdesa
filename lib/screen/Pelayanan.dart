@@ -136,7 +136,6 @@ class _ListContainer extends StatelessWidget {
   final String judul;
   final String biaya;
   final String waktu;
-  final String gambar = 'assets/images/logo2.png';
 
   const _ListContainer({Key key, this.judul, this.biaya, this.waktu})
       : super(key: key);
@@ -190,20 +189,6 @@ class _ListContainer extends StatelessWidget {
               )
             ],
           ),
-          // ! Gambar Container
-          Container(
-            height: 98.00,
-            width: 120.00,
-            decoration: BoxDecoration(
-              color: Color(0xffffffff),
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(10.00),
-                bottomRight: Radius.circular(10.00),
-              ),
-              image:
-                  DecorationImage(image: AssetImage(gambar), fit: BoxFit.fill),
-            ),
-          )
         ],
       ),
     );

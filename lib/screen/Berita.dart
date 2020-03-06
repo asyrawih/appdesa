@@ -97,18 +97,18 @@ class _BeritaState extends State<Berita> {
         decoration: BoxDecoration(
           color: bgColor,
           boxShadow: [
-             BoxShadow(
-                color: lightColor.withOpacity(0.1),
-                offset: Offset(-6, -6),
-                spreadRadius: 0,
-                blurRadius: 6,
-              ),
-              BoxShadow(
-                color: Colors.black26,
-                offset: Offset(6, 6),
-                spreadRadius: 0,
-                blurRadius: 6,
-              )
+            BoxShadow(
+              color: lightColor.withOpacity(0.1),
+              offset: Offset(-6, -6),
+              spreadRadius: 0,
+              blurRadius: 6,
+            ),
+            BoxShadow(
+              color: Colors.black26,
+              offset: Offset(6, 6),
+              spreadRadius: 0,
+              blurRadius: 6,
+            )
           ],
         ),
         child: Row(
