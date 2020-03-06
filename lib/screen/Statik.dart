@@ -8,21 +8,40 @@ import 'package:appdesa/widgets/ChartStatistik.dart';
 class Statik extends StatelessWidget {
   final List<ModelChart> data = [
     ModelChart(
-      label: "Anak Anak",
-      counter: 800,
-      barColor: charts.ColorUtil.fromDartColor(Colors.red),
+      label: "Laki Laki",
+      counter: 1303,
+      barColor: charts.ColorUtil.fromDartColor(Colors.yellow),
     ),
     ModelChart(
-      label: "Dewasa",
-      counter: 2000,
-      barColor: charts.ColorUtil.fromDartColor(Colors.redAccent),
+      label: "Perempuan",
+      counter: 1300,
+      barColor: charts.ColorUtil.fromDartColor(Colors.green),
     ),
     ModelChart(
-      label: "Lansia",
-      counter: 12000,
-      barColor: charts.ColorUtil.fromDartColor(Colors.greenAccent),
+      label: "Total L+P",
+      counter: 2603,
+      barColor: charts.ColorUtil.fromDartColor(Colors.green),
     ),
   ];
+
+  final List<ModelChart> data2 = [
+    ModelChart(
+      label: "Laki Laki",
+      counter: 100,
+      barColor: charts.ColorUtil.fromDartColor(Colors.yellow),
+    ),
+    ModelChart(
+      label: "Perempuan",
+      counter: 200,
+      barColor: charts.ColorUtil.fromDartColor(Colors.green),
+    ),
+    ModelChart(
+      label: "Total L+P",
+      counter: 300,
+      barColor: charts.ColorUtil.fromDartColor(Colors.green),
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,11 +61,15 @@ class Statik extends StatelessWidget {
           ],
         ),
       ),
-      body: Column(
+      body: Row(
         children: <Widget>[
           SingleChildScrollView(
-            child: ChartStatistik(
-              data: data,
+            child: Column(
+              children: <Widget>[
+                ChartStatistik(
+                  data: data,
+                ),
+              ],
             ),
           ),
         ],

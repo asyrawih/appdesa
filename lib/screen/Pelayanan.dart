@@ -18,77 +18,54 @@ class _PelayananState extends State<Pelayanan> {
 
   final List<PelayananModel> pelayanan = [
     PelayananModel(
-      judul: 'Pembuatan KTP/KK',
+      judul: 'Surat Keterangan Pindah',
       biaya: 'Gratis',
       waktu: '10 Menit',
       syrat: syrat,
     ),
     PelayananModel(
-      judul: 'Pengantar Perubahan KK',
+      judul: 'Surat Keterangan Nikah',
       biaya: 'Gratis',
       waktu: '10 Menit',
       syrat: syrat,
     ),
     PelayananModel(
-      judul: 'Pengantar SKCK',
+      judul: 'Surat Keterangan Hewan',
       biaya: 'Gratis',
       waktu: '10 Menit',
       syrat: syrat,
     ),
     PelayananModel(
-      judul: 'Keterangan Tidak Mampu',
+      judul: 'Surat Keterangan Waris dan Kuasa Waris',
       biaya: 'Gratis',
       waktu: '10 Menit',
       syrat: syrat,
     ),
     PelayananModel(
-      judul: 'Keterangan Domisili',
+      judul: 'Surat Pernyataan Hibah',
       biaya: 'Gratis',
       waktu: '10 Menit',
       syrat: syrat,
     ),
     PelayananModel(
-      judul: 'Izin Kegiatan/Keramaian',
+      judul: 'Surat Pernyataan Jual Beli',
       biaya: 'Gratis',
       waktu: '10 Menit',
       syrat: syrat,
     ),
     PelayananModel(
-      judul: 'Izin Usaha Peternakan',
+      judul: 'Surat Pernyataan Kuasa',
       biaya: 'Gratis',
       waktu: '10 Menit',
       syrat: syrat,
     ),
     PelayananModel(
-      judul: 'Izin Lembaga Kursus',
+      judul: 'Surat Pernyataan Tanggung jawab \n Mutlak (SPTM)',
       biaya: 'Gratis',
       waktu: '10 Menit',
       syrat: syrat,
     ),
-    PelayananModel(
-      judul: 'Izin Mendirikan Bangunan',
-      biaya: 'Gratis',
-      waktu: '10 Menit',
-      syrat: syrat,
-    ),
-    PelayananModel(
-      judul: 'Izin Mend. Bangunan',
-      biaya: 'Gratis',
-      waktu: '10 Menit',
-      syrat: syrat,
-    ),
-    PelayananModel(
-      judul: 'Izin Lokasi',
-      biaya: 'Gratis',
-      waktu: '10 Menit',
-      syrat: syrat,
-    ),
-    PelayananModel(
-      judul: 'Izin Gangguan/HO',
-      biaya: 'Gratis',
-      waktu: '10 Menit',
-      syrat: syrat,
-    ),
+    
   ];
 
   @override

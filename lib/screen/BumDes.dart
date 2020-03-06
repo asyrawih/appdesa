@@ -54,36 +54,36 @@ class Bumdes extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   _buildFoto(LineAwesomeIcons.bar_chart, Colors.yellowAccent,
-                      'assets/bumdes/1.jpg'),
+                     'Koprasi' , 'assets/bumdes/1.jpg'),
                   _buildFoto(LineAwesomeIcons.bar_chart, Colors.yellowAccent,
-                      'assets/bumdes/2.jpg'),
+                     'Koparsi', 'assets/bumdes/2.jpg'),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   _buildFoto(LineAwesomeIcons.bar_chart, Colors.yellowAccent,
-                      'assets/bumdes/3.jpg'),
+                      'Sablon','assets/bumdes/3.jpg'),
                   _buildFoto(LineAwesomeIcons.bar_chart, Colors.yellowAccent,
-                      'assets/bumdes/4.jpg'),
+                     'FotoCopy' ,'assets/bumdes/4.jpg'),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   _buildFoto(LineAwesomeIcons.bar_chart, Colors.yellowAccent,
-                      'assets/bumdes/5.jpg'),
+                      'Serah Terima','assets/bumdes/5.jpg'),
                   _buildFoto(LineAwesomeIcons.bar_chart, Colors.yellowAccent,
-                      'assets/bumdes/6.jpg'),
+                      'Structur organ','assets/bumdes/6.jpg'),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   _buildFoto(LineAwesomeIcons.bar_chart, Colors.yellowAccent,
-                      'assets/bumdes/7.jpg'),
+                      'Logo','assets/bumdes/7.jpg'),
                   _buildFoto(LineAwesomeIcons.bar_chart, Colors.yellowAccent,
-                      'assets/bumdes/8.jpg'),
+                      'Foto Anggota','assets/bumdes/8.jpg'),
                 ],
               ),
             ],
@@ -94,14 +94,14 @@ class Bumdes extends StatelessWidget {
   }
 }
 
-Widget _buildFoto(icon, color, gambar) {
+Widget _buildFoto(icon, color, title ,  gambar) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.center,
     children: <Widget>[
       Container(
         height: 150.0,
         width: 170.0,
-        margin: EdgeInsets.only(bottom: 16.0),
+        margin: EdgeInsets.only(bottom: 10.0),
         decoration: BoxDecoration(
             color: bgColor,
             borderRadius: BorderRadius.circular(16),
@@ -128,10 +128,10 @@ Widget _buildFoto(icon, color, gambar) {
         //   ),
         // ),
       ),
-      // Text(
-      //   title,
-      //   style: subtitleStyle,
-      // ),
+      Text(
+        title,
+        style: subtitleStyle,
+      ),
     ],
   );
 }

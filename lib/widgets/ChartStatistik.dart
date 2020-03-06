@@ -18,18 +18,18 @@ class ChartStatistik extends StatelessWidget {
     ];
     return Container(
       height: 500,
-      width: 500,
-      padding: EdgeInsets.all(20),
+      width: MediaQuery.of(context).size.width ,
+      padding: EdgeInsets.all(10.0),
       child: Card(
         child: Column(
           children: <Widget>[
             Expanded(
+              flex: 1,
               child: charts.BarChart(
                 chart,
                 animate: true,
               ),
             ),
-            SizedBox(height: 20.0),
           ],
         ),
       ),
