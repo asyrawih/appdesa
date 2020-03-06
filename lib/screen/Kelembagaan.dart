@@ -1,6 +1,7 @@
 import 'package:appdesa/style.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:line_awesome_icons/line_awesome_icons.dart';
 
 class Kelambagaan extends StatelessWidget {
   final ScrollController _controller = ScrollController();
@@ -35,7 +36,7 @@ class Kelambagaan extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
-                    'Kelembagaan',
+                    'Aparat Desa',
                     style:
                         GoogleFonts.roboto(color: Colors.white, fontSize: 24.0),
                   ),
@@ -43,31 +44,43 @@ class Kelambagaan extends StatelessWidget {
                     Icons.arrow_downward,
                     color: Colors.white,
                     size: 23.0,
-                  )
+                  ),
                 ],
               ),
-              SizedBox(height: 10.0),
-              _ListContainer(
-                nama: 'Hanan Asyrawi',
-                jabatan: 'Kepala Desa',
-                gambar:
-                    'https://images.unsplash.com/photo-1583096985230-7cbff05f1bba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=755&q=80',
+              SizedBox(
+                height: 35.0,
               ),
-              SizedBox(height: 10.0),
-              _ListContainer(
-                nama: 'Hary Sasmito',
-                jabatan: 'Sekdes',
-                gambar:
-                    'https://images.pexels.com/photos/3722173/pexels-photo-3722173.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+              Center(
+                child: _buildFoto(LineAwesomeIcons.bar_chart,
+                    Colors.yellowAccent, 'Statistik', 'assets/lembaga/5.jpg'),
               ),
-              SizedBox(height: 10.0),
-              _ListContainer(
-                nama: 'Fadly Irawan',
-                jabatan: 'CS Cleaning Service',
-                gambar:
-                    'https://images.pexels.com/photos/3441119/pexels-photo-3441119.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  _buildFoto(LineAwesomeIcons.bar_chart, Colors.yellowAccent,
+                      'Statistik', 'assets/lembaga/1.jpg'),
+                  _buildFoto(LineAwesomeIcons.bar_chart, Colors.yellowAccent,
+                      'Statistik', 'assets/lembaga/2.jpg'),
+                ],
               ),
-              SizedBox(height: 10.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  _buildFoto(LineAwesomeIcons.bar_chart, Colors.yellowAccent,
+                      'Statistik', 'assets/lembaga/3.jpg'),
+                  _buildFoto(LineAwesomeIcons.bar_chart, Colors.yellowAccent,
+                      'Statistik', 'assets/lembaga/4.jpg'),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  _buildFoto(LineAwesomeIcons.bar_chart, Colors.yellowAccent,
+                      'Statistik', 'assets/lembaga/3.jpg'),
+                  _buildFoto(LineAwesomeIcons.bar_chart, Colors.yellowAccent,
+                      'Statistik', 'assets/lembaga/4.jpg'),
+                ],
+              ),
             ],
           ),
         ),
@@ -76,78 +89,44 @@ class Kelambagaan extends StatelessWidget {
   }
 }
 
-class _ListContainer extends StatelessWidget {
-  final String nama;
-  final String alamat;
-  final String jabatan;
-  final String gambar;
-  const _ListContainer(
-      {Key key, this.nama, this.alamat, this.jabatan, this.gambar})
-      : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 98.00,
-      width: 364.00,
-      decoration: BoxDecoration(
-        color: Color(0xff283f4d),
-        boxShadow: [
-          BoxShadow(
-            offset: Offset(0.00, 3.00),
-            color: Color(0xff000000).withOpacity(0.16),
-            blurRadius: 50,
-          ),
-        ],
-        borderRadius: BorderRadius.circular(10.00),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Text(
-                  nama,
-                  style: TextStyle(
-                    fontFamily: "Muli",
-                    fontWeight: FontWeight.w700,
-                    fontSize: 16,
-                    color: Color(0xffffffff),
-                  ),
-                ),
+Widget _buildFoto(icon, color, title, gambar) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: <Widget>[
+      Container(
+        height: 150.0,
+        width: 150.0,
+        margin: EdgeInsets.only(bottom: 16.0),
+        decoration: BoxDecoration(
+            color: bgColor,
+            borderRadius: BorderRadius.circular(16),
+            image: DecorationImage(image: AssetImage(gambar), fit: BoxFit.fill),
+            boxShadow: [
+              BoxShadow(
+                color: lightColor.withOpacity(0.1),
+                offset: Offset(-6, -6),
+                spreadRadius: 0,
+                blurRadius: 6,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: Text(
-                  jabatan,
-                  style: TextStyle(
-                    fontFamily: "Muli",
-                    fontSize: 12,
-                    color: Color(0xffffffff),
-                  ),
-                ),
+              BoxShadow(
+                color: Colors.black26,
+                offset: Offset(6, 6),
+                spreadRadius: 0,
+                blurRadius: 6,
               )
-            ],
-          ),
-          // ! Gambar Container
-          Container(
-            height: 98.00,
-            width: 120.00,
-            decoration: BoxDecoration(
-                color: Color(0xffffffff),
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(10.00),
-                  bottomRight: Radius.circular(10.00),
-                ),
-                image: DecorationImage(
-                    image: NetworkImage(gambar), fit: BoxFit.cover)),
-          )
-        ],
+            ]),
+        // child: Center(
+        //   child: Icon(
+        //     icon,
+        //     size: 46,
+        //     color: color,
+        //   ),
+        // ),
       ),
-    );
-  }
+      Text(
+        title,
+        style: subtitleStyle,
+      ),
+    ],
+  );
 }
