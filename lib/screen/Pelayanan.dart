@@ -65,6 +65,36 @@ class _PelayananState extends State<Pelayanan> {
       waktu: '10 Menit',
       syrat: syrat,
     ),
+    PelayananModel(
+      judul: 'Surat Permohonan Kartu identitas anak',
+      biaya: 'Gratis',
+      waktu: '10 Menit',
+      syrat: syrat,
+    ),
+    PelayananModel(
+      judul: 'Surat permohonan Kartu keluarga',
+      biaya: 'Gratis',
+      waktu: '10 Menit',
+      syrat: syrat,
+    ),
+    PelayananModel(
+      judul: 'Surat Permohonan KTP',
+      biaya: 'Gratis',
+      waktu: '10 Menit',
+      syrat: syrat,
+    ),
+    PelayananModel(
+      judul: 'Surat keterangan Hilang',
+      biaya: 'Gratis',
+      waktu: '10 Menit',
+      syrat: syrat,
+    ),
+    PelayananModel(
+      judul: 'Surat keterangan usaha',
+      biaya: 'Gratis',
+      waktu: '10 Menit',
+      syrat: syrat,
+    ),
     
   ];
 

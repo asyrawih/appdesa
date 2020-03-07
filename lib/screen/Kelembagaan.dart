@@ -154,29 +154,29 @@ class Kelambagaan extends StatelessWidget {
               Column(
                 children: <Widget>[
                   _ListContainer(
-                      nama: '1',
-                      jabatan: 'jabatan ',
-                      gambar: "assets/lembaga/1.jpg"),
+                      nama: 'Dasiman',
+                      jabatan: 'Ketua BPD ',
+                      gambar: "assets/lembaga/5.jpg"),
                   SizedBox(height: 10.0),
                   _ListContainer(
-                      nama: '1',
-                      jabatan: 'jabatan ',
+                      nama: 'Tabri',
+                      jabatan: 'Wakil Ketua ',
                       gambar: "assets/lembaga/2.jpg"),
                   SizedBox(height: 10.0),
                   _ListContainer(
-                      nama: '1',
-                      jabatan: 'jabatan ',
-                      gambar: "assets/lembaga/3.jpg"),
-                  SizedBox(height: 10.0),
-                  _ListContainer(
-                      nama: '1',
-                      jabatan: 'jabatan ',
+                      nama: 'Rahmawati',
+                      jabatan: 'Sekretaris',
                       gambar: "assets/lembaga/4.jpg"),
                   SizedBox(height: 10.0),
                   _ListContainer(
-                      nama: '1',
-                      jabatan: 'jabatan ',
-                      gambar: "assets/lembaga/5.jpg"),
+                      nama: 'Jumadi',
+                      jabatan: 'Bidang I BPD ',
+                      gambar: "assets/lembaga/1.jpg"),
+                  SizedBox(height: 10.0),
+                  _ListContainer(
+                      nama: 'Safri Nammin',
+                      jabatan: 'Bidang II BPD ',
+                      gambar: "assets/lembaga/3.jpg"),
                 ],
               ),
             ],

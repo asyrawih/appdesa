@@ -54,9 +54,9 @@ class Bumdes extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   _buildFoto(LineAwesomeIcons.bar_chart, Colors.yellowAccent,
-                     'Koprasi' , 'assets/bumdes/1.jpg'),
+                     'Warung' , 'assets/bumdes/1.jpg'),
                   _buildFoto(LineAwesomeIcons.bar_chart, Colors.yellowAccent,
-                     'Koparsi', 'assets/bumdes/2.jpg'),
+                     'Warung', 'assets/bumdes/2.jpg'),
                 ],
               ),
               Row(

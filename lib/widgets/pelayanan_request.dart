@@ -1,6 +1,7 @@
 import 'package:appdesa/style.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PelayananRequest extends StatefulWidget {
   @override
@@ -9,7 +10,22 @@ class PelayananRequest extends StatefulWidget {
 
 class _PelayananRequestState extends State<PelayananRequest> {
   final _formKey = GlobalKey<FormState>();
-  TextEditingController _nameController;
+  final _nameController = TextEditingController();
+  final _nikController = TextEditingController();
+  final _nohpController = TextEditingController();
+  final _pekerjaanController = TextEditingController();
+
+  _launchURL() async {
+    dynamic phone = "+6282346977233";
+    var whatsappUrl =
+        "https://wa.me/$phone?text=Assalamualaikum Request Layanan Desa , \n Nama : ${_nameController.text}";
+    if (await canLaunch(whatsappUrl)) {
+      await launch(whatsappUrl);
+    } else {
+      throw 'Could not launch $whatsappUrl';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,14 +44,25 @@ class _PelayananRequestState extends State<PelayananRequest> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                 SizedBox(
+                SizedBox(
                   height: 35.0,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    "Tolong Masukan Data Dengan Benar",
-                    style: GoogleFonts.montserrat(color: Colors.black , fontSize: 20.0),
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        "Tolong Masukan Data Dengan Benar",
+                        style: GoogleFonts.montserrat(
+                            color: Colors.black, fontSize: 20.0),
+                      ),
+                      SizedBox(height: 10.0),
+                      Text(
+                        "Permohonan Anda Akan Kami Direct Langsung Ke \n Admin",
+                        style: GoogleFonts.montserrat(
+                            color: Colors.black, fontSize: 20.0),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(
@@ -74,7 +101,7 @@ class _PelayananRequestState extends State<PelayananRequest> {
                       ),
                     ),
                     cursorColor: Colors.yellowAccent,
-                    controller: _nameController,
+                    controller: _nikController,
                     validator: (value) {
                       if (value.isEmpty) {
                         return 'Tolong di Isi';
@@ -95,7 +122,7 @@ class _PelayananRequestState extends State<PelayananRequest> {
                       ),
                     ),
                     cursorColor: Colors.yellowAccent,
-                    controller: _nameController,
+                    controller: _nohpController,
                     validator: (value) {
                       if (value.isEmpty) {
                         return 'Tolong di Isi';
@@ -116,7 +143,7 @@ class _PelayananRequestState extends State<PelayananRequest> {
                       ),
                     ),
                     cursorColor: Colors.yellowAccent,
-                    controller: _nameController,
+                    controller: _pekerjaanController,
                     validator: (value) {
                       if (value.isEmpty) {
                         return 'Tolong di Isi';
@@ -131,13 +158,7 @@ class _PelayananRequestState extends State<PelayananRequest> {
                     elevation: 6.0,
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
-                        Scaffold.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text('Wait'),
-                            duration: Duration(milliseconds: 200),
-                            backgroundColor: Colors.white,
-                          ),
-                        );
+                        _launchURL();
                       }
                     },
                     child: Text("Kirim"),

@@ -6,6 +6,7 @@ git clone repo_url
 # Preview Gambar Applikasi
 
 ![Image description](screen.jpeg)
+![Image description](flutter_01.png)
 
 # Todo App Desa
 
@@ -43,3 +44,4 @@ git clone repo_url
 
 * [x] Buat Statistik Desa 
     * [x] Statistik Penduduk 
+

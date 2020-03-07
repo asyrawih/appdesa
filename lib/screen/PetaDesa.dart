@@ -21,6 +21,9 @@ class _PetaDesaState extends State<PetaDesa> {
 
   MapType _mapType = MapType.normal;
 
+  BitmapDescriptor pinLocationIcon;
+  Set<Marker> _markers;
+
   Future<void> lokasiku() async {
     _locationData = await location.getLocation();
 
@@ -41,10 +44,11 @@ class _PetaDesaState extends State<PetaDesa> {
     print(_locationData);
   }
 
+  static LatLng pinPosition = LatLng(-2.5129673, 120.8197366);
   // Initial Camera
   static final CameraPosition _bangunJayaLocation = CameraPosition(
-    target: LatLng(-2.5129697,120.8198325),
-    zoom: 14,
+    target: pinPosition,
+    zoom: 19.151926040649414,
   );
 
   static final CameraPosition _updateMaps = CameraPosition(
@@ -64,6 +68,18 @@ class _PetaDesaState extends State<PetaDesa> {
       _mapType =
           _mapType == MapType.normal ? MapType.satellite : MapType.normal;
     });
+  }
+
+  void setCustomMapPin() async {
+    pinLocationIcon = await BitmapDescriptor.fromAssetImage(
+        ImageConfiguration(devicePixelRatio: 2.5),
+        'assets/destination_map_marker.png');
+  }
+
+  @override
+  void initState() {
+    setCustomMapPin();
+    super.initState();
   }
 
   @override
@@ -90,8 +106,20 @@ class _PetaDesaState extends State<PetaDesa> {
           GoogleMap(
             mapType: _mapType,
             initialCameraPosition: _bangunJayaLocation,
+            markers: _markers,
+            myLocationButtonEnabled: true,
+            compassEnabled: true,
             onMapCreated: (GoogleMapController controller) {
               _controller.complete(controller);
+              setState(() {
+                _markers.clear(); 
+                _markers.add(
+                  Marker(
+                      markerId: MarkerId("-2.5129673,120.8197366"),
+                      position: pinPosition,
+                      icon: pinLocationIcon),
+                );
+              });
             },
           ),
           Column(
