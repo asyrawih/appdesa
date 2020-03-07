@@ -45,3 +45,4 @@ git clone repo_url
 * [x] Buat Statistik Desa 
     * [x] Statistik Penduduk 
 
+* [x] All Done ♨  ♨  ♨
